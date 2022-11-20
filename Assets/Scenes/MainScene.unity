@@ -431,6 +431,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1122231339054426701, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122231339054426702, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 155d0ea792c1ebe46a2075904cba8104,
+        type: 2}
     - target: {fileID: 1122231339054426705, guid: 907adadeb2348e24cbc95d2773e576e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -446,6 +457,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1122231339883828686, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122231339883828687, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 155d0ea792c1ebe46a2075904cba8104,
+        type: 2}
     - target: {fileID: 1122231339883828690, guid: 907adadeb2348e24cbc95d2773e576e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -461,6 +483,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1122231339925469423, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122231339925469424, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 155d0ea792c1ebe46a2075904cba8104,
+        type: 2}
     - target: {fileID: 1122231339925469427, guid: 907adadeb2348e24cbc95d2773e576e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,6 +509,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 1122231340256981207, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122231340256981208, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 155d0ea792c1ebe46a2075904cba8104,
+        type: 2}
     - target: {fileID: 1122231340256981211, guid: 907adadeb2348e24cbc95d2773e576e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -491,6 +535,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1122231340941923499, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122231340941923500, guid: 907adadeb2348e24cbc95d2773e576e1,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 155d0ea792c1ebe46a2075904cba8104,
+        type: 2}
     - target: {fileID: 1122231340941923503, guid: 907adadeb2348e24cbc95d2773e576e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -595,6 +650,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 4800467918452409777, guid: 1d8085f9af620ec42b0cba9273e3e1c0,
+        type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 4beb74db5b39fae41b9d1e5201724b01,
+        type: 2}
     - target: {fileID: 4800467918452409781, guid: 1d8085f9af620ec42b0cba9273e3e1c0,
         type: 3}
       propertyPath: m_RootOrder
@@ -700,6 +761,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 4800467918452409777, guid: 1d8085f9af620ec42b0cba9273e3e1c0,
+        type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 838d62370c2455344aaad5acf2f05991,
+        type: 2}
     - target: {fileID: 4800467918452409777, guid: 1d8085f9af620ec42b0cba9273e3e1c0,
         type: 3}
       propertyPath: playerIndex

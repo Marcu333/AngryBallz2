@@ -19,6 +19,6 @@ public class timer : MonoBehaviour
     void Update()
     {
         textmeshPro.SetText((System.DateTime.Now - initialTime).ToString().Substring(3, 8));
-        print(textmeshPro.text);
+        //print(textmeshPro.text);
     }
 }
