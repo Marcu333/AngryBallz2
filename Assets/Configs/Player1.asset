@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e838f65664ab441ba2b4d8d6524331, type: 3}
   m_Name: Player1
   m_EditorClassIdentifier: 
-  speed: 1000
-  attack: 10
-  defense: 10
+  speed: 3000
+  attack: 1
+  defense: 1
   playerIndex: 0
