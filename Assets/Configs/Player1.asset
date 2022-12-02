@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Player1
   m_EditorClassIdentifier: 
   speed: 3000
-  attack: 1
+  attack: 10000
   defense: 1
   playerIndex: 0

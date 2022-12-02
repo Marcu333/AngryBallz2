@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
 
     public void PushOther(Collision collision)
     {
+        /*
         if (collision.gameObject.GetComponent<ICollisionEntity>().IsImmutable()) return;
         var mySpeedToOther =  _rb.velocity.magnitude / collision.rigidbody.velocity.magnitude;
         //if (stats.playerIndex == Players.ONE)
@@ -74,6 +75,15 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
             collision.gameObject.GetComponent<Rigidbody>().AddForce(mySpeedToOther * (collision.impulse * 0.1f) * Defense / collision.gameObject.GetComponent<ICollisionEntity>().Defense, ForceMode.VelocityChange);
 
         }
+        */
+
+        // Calculate Angle Between the collision point and the player
+        Vector3 dir = collision.contacts[0].point - transform.position;
+        // We then get the opposite (-Vector3) and normalize it
+        dir = -dir.normalized;
+        // And finally we add force in the direction of dir and multiply it by force. 
+        // This will push back the player
+        GetComponent<Rigidbody>().AddForce(dir * Attack);
 
     }
 
