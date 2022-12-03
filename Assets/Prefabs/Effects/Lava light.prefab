@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3004680252685257734}
   - component: {fileID: 7209662976932040152}
   m_Layer: 0
-  m_Name: GreenTrailParticle
+  m_Name: Lava light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

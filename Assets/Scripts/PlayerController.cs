@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -15,6 +16,16 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
     private Controls _controls;
     private float _attack;
     private float _defense;
+    private int _lives;
+    private UIManager _UIManager;
+
+    public int Lives
+    {
+        get { return _lives; }
+        set { _lives = value;  _UIManager.UpdatePlayerLives(this); }
+    }
+
+    private Vector3 spawnPos;
 
     private Vector2 ReadPlayerMovementInput() => stats.playerIndex switch
     {
@@ -27,11 +38,15 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _UIManager = FindObjectOfType<UIManager>();
+        Lives = (int)stats.startLives;
         _controls = new Controls();
         _controls.Player1.Enable();
         _controls.Player2.Enable();
         _attack = stats.attack;
         _defense = stats.defense;
+        spawnPos = transform.position;
+        _UIManager.UpdatePlayerLives(this);
     }
 
     private void Update()
@@ -54,6 +69,13 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
     public bool IsImmutable()
     {
         return Defense >= 999;
+    }
+
+    public void Restart(Collision collision)
+    {
+        transform.position = spawnPos;
+        _rb.velocity = Vector3.zero;
+        Lives--;
     }
 
     public void PushOther(Collision collision)

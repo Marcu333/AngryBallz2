@@ -6,6 +6,7 @@ using static PlayerController;
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "", order = 1)]
 public class PlayerStats : ScriptableObject
 {
+    public float startLives = 3;
     public float speed;
     public float attack;
     public float defense;
