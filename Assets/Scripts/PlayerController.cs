@@ -22,7 +22,12 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
     public int Lives
     {
         get { return _lives; }
-        set { _lives = value;  _UIManager.UpdatePlayerLives(this); }
+        set { 
+            if(value <= 0)
+            {
+                RestartScene();
+            }
+            _lives = value;  _UIManager.UpdatePlayerLives(this); }
     }
 
     private Vector3 spawnPos;
@@ -53,6 +58,11 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
     {
         Vector2 inputVector = ReadPlayerMovementInput();
         _rb.AddForce(inputVector.x * stats.speed * Time.deltaTime, 0, inputVector.y * stats.speed * Time.deltaTime, ForceMode.Acceleration);
+    }
+
+    private void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -118,6 +128,8 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
         public string tag;
         public UnityEvent<Collision> events;
     }
+
+
     public enum Players
     {
         ONE,
