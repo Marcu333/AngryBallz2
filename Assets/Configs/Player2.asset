@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e838f65664ab441ba2b4d8d6524331, type: 3}
   m_Name: Player2
   m_EditorClassIdentifier: 
+  startLives: 3
   speed: 3000
   attack: 10000
   defense: 1

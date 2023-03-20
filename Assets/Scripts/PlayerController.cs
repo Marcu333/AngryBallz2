@@ -10,7 +10,9 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerController : MonoBehaviour, ICollisionEntity
 {
     public PlayerStats stats;
-    public List<CollisionEvent> collisionEvents;   
+    public List<CollisionEvent> collisionEvents;
+    public List<TriggerEvent> triggerEvents;
+
 
     private Rigidbody _rb;
     private Controls _controls;
@@ -19,6 +21,8 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
     private int _lives;
     private UIManager _UIManager;
 
+    Coroutine coroutine;
+    
     public int Lives
     {
         get { return _lives; }
@@ -70,6 +74,13 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
         foreach (CollisionEvent collisionEvent in collisionEvents)
             if (collision.gameObject.CompareTag(collisionEvent.tag))
                 collisionEvent.events.Invoke(collision);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        foreach (TriggerEvent collisionEvent in triggerEvents)
+            if (other.gameObject.CompareTag(collisionEvent.tag))
+                collisionEvent.events.Invoke(other);
     }
     #endregion
 
@@ -129,12 +140,40 @@ public class PlayerController : MonoBehaviour, ICollisionEntity
         public UnityEvent<Collision> events;
     }
 
+    [System.Serializable]
+    public struct TriggerEvent
+    {
+        public string tag;
+        public UnityEvent<Collider> events;
+    }
 
     public enum Players
     {
         ONE,
         TWO,
     }
+    
+
+
+    public void ActivatePowerUp(Collider powerUp)
+    {
+        PowerUp pw = powerUp.GetComponent<PowerUp>();
+        if (coroutine != null)
+            StopCoroutine(coroutine);
+        coroutine = StartCoroutine(PowerUpRoutine(pw.duration));
+        Destroy(pw.gameObject);  
+    }
+
+    IEnumerator PowerUpRoutine(float time)
+    {
+        Attack = 1;
+        yield return new WaitForSeconds(time);
+        Attack = stats.attack;
+    }
+
+
+
+    
 
     #endregion
 }
